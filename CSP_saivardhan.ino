@@ -97,10 +97,10 @@ void sendLocationAndCall() {
   Gsm.print("AT+CMGS=\"");
   Gsm.print(phone_no);
   Gsm.println("\"");
-  Serial.print("Accident detected at: http://maps.google.com/maps?q=loc:");
-  Serial.print(flat == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flat, 6);
-  Serial.print(",");
-  Serial.print(flon == TinyGPS ::GPS_INVALID_F_ANGLE ? 0.0 : flon, 6);
+  Gsm.print("Accident detected at: http://maps.google.com/maps?q=loc:");
+  Gsm.print(flat == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flat, 6);
+  Gsm.print(",");
+  Gsm.print(flon == TinyGPS ::GPS_INVALID_F_ANGLE ? 0.0 : flon, 6);
   Gsm.println((char)26);
   delay(200);
 
